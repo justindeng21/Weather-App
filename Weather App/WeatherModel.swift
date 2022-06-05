@@ -82,7 +82,7 @@ class weatherApi : ObservableObject{
     }
     
     func loadData(lat : Double, long: Double){
-        guard let url = URL(string: "https://api.openweathermap.org/data/3.0/onecall?lat=\(lat)&lon=\(long)&exclude=hourly,minutely&appid=5f272d2e9b1f7028e224531ca114516e") else{
+        guard let url = URL(string: "https://api.openweathermap.org/data/3.0/onecall?lat=\(lat)&lon=\(long)&exclude=hourly,minutely&appid=\(Bundle.main.infoDictionary?["ClientKey"]  as? String ?? "API KEY GA KE FETCH")") else{
             fatalError("Invalid URL")
         }
         
